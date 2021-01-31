@@ -39,4 +39,4 @@ Incluso na instalação
 
 #createEntityAdapter: gera um conjunto de redutores e seletores reutilizáveis ​​para gerenciar dados normalizados na loja
 
-#O utilitário createSelector da biblioteca Reselect, reexportado para facilidade de uso.
+#O utilitário createSelector da biblioteca Reselect, reexportado para facilidade de uso
