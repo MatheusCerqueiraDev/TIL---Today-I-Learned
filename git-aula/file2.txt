@@ -1,0 +1,103 @@
+HTTP - Hyper Text Transfer Protocol
+Protocolo de transferencia de hypertexto
+
+///////////////////////////////////////////
+URI - Uniform Resource Identifier
+
+Se podemos identificar, nomear, endereçar ou manipular, estamos falando de um recurso
+
+ ------ Conceito
+Usa do para idenficar recursos pelo nome ou localização
+
+Exemplo: Eu sou um recurso, caso eu precise me procurar, irie procurar pelo meu nome ou endereço
+
+
+
+ ------ Recurso 
+ O recurso é o alvo do meu pedido, exemplo, se eu coloco no browser google.com, goolge.com é o meu alvo/recurso
+
+ Tipos de recursos:
+ Digital, exemeplo, email, pois nãos se acessa um email atraves de um HTTP e sim atráves de um mailto
+
+ Abstrata, exemplo, sessão/login um recurso abstrato nescessita de um caminho/autenticação/endereços para poder acessar o recurso
+
+Fisicos, exemplos, produtos/usuarios
+
+
+
+---------Locator
+
+ URL - Uniform Resource Locator
+
+ Usado para acessar recursos atraves do endereço
+ Toda URL será uma URI, mas nem toda URI será uma URL
+
+
+ Componentes
+URL tem dois componentes OBRIGATORIOS sendo eles um protocolo e um dominio
+
+exemplos:
+https://www.rocketseat.com.br/blog - https seria o protocolo e o rockeatseat.com.br seria o dominio
+A URL seria esse link todo, enquanto dominio é somente o rockeatseat.com.br
+
+
+Componentes opcionais
+
+Componentes opcionais são usados para especificar algum "Local" especifico que voê queira acessar
+
+Subdominio - Vem antes do dominio
+
+Path - https://www.rocketseat.com.br/blog - O (/blog) será o path usado para acessar um "local" especifico no site
+
+Parametros - https://youtube.com/watch?v=vpYct2npKD8 o parametro é colocado após o path, usado geralmente para acessar arquivos tipo imagem, produto e video
+
+Portas - É um local no servidor disponivel para eu chegar no meu recurso
+
+Ancora - Algum lugar dentro do meu documento
+
+
+-------Name
+
+URN
+
+Uniform Resource Name
+
+Todo produto tem seu nome na internet e para digitarmos ele usamos URN
+
+///////////////////////////////////////////////
+HTTP MESSAGES
+
+--------Mensagens
+
+Tanto para request ou para response existem mensagens
+
+--Resquest/Pedido
+
+Request é um verbo http que diz o Method do pedido possar ser ele um
+ pedido simples, um cadastro ou exclusão de algo 
+
+//////////////////////////////////////////
+Methods
+
+Http Methods
+
+Methods é alguma ação ou operação que o cliente deseja executar
+Method pode ser chamado de verbo 
+
+---Caracteristicas
+
+-- Methods Seguros
+
+GET/HEAD/OPTIONS
+
+Não altera o estado do servidor - aqueles metodos que só recebem a resposta do servidor
+
+--Idempotentes
+
+Ao executar o method a resposta sempre será a mesma
+Todos os Methods seguros são idempotentes (GET/HEAD/OPTIONS)
+Além de PUT & DELETE
+
+-- Não são idempotentes nem seguros
+
+POST/PATCH 
