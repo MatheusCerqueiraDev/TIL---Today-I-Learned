@@ -1,0 +1,3 @@
+Serveless - Serveless significa que cada rota da nossa aplicação será executada de forma isolada
+
+CMS (Content Management system) - Cadastro de informação e servir essas informações atráves de APIs
