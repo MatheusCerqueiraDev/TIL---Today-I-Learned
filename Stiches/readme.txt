@@ -238,7 +238,7 @@ const fadeIn = keyframes({
 const Box = styled('div', {
   animationName: fadeIn,
 });
-Renderização do lado do servidor
+Renderização do lado do servidor.
 Em componentes estilizados, você cria ServerStyleSheetou StyleSheetManagerdepende de suas necessidades.
 
 Em Stitches, você usa a getCssStringfunção. Saiba mais sobre renderização do lado do servidor .
