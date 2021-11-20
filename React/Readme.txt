@@ -174,3 +174,21 @@ Nós colocamos o ID do atual amigo selecionado na variável de estado (state) re
 Pelo fato de o Hook useState nos fornecer o último valor da variável de estado (state) recipientID, podemos passá-la para nosso Hook customizado useFriendStatus como um parâmetro
 
 Isto nos informa se o amigo atualmente seleccionado está online. Se escolhermos um amigo diferente e atualizarmos a variável de estado recipientID, o nosso Hook useFriendStatus irá cancelar a subscrição do amigo seleccionado anteriormente, e subscrever para o status do recém-selecionado.
+----------------------------------------------------------------------
+PT-BR
+PROPS 
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+<Welcome name="Sara" />;
+
+Um elemento representando um componente definido pelo usuário,
+ele passa atributos JSX e componentes filhos para esse componente como um único objeto.
+Nós chamamos esse objeto de “props”.
+
+1. Nós chamamos o elemento <Welcome name="Sara" />.
+2.React chama o componente Welcome com {name: 'Sara'} como props.
+3.Nosso componente Welcome retorna um elemento <h1>Hello, Sara</h1> como resultado.
+4.React DOM atualiza eficientemente o DOM para corresponder <h1>Hello, Sara</h1>.
