@@ -192,3 +192,96 @@ Nós chamamos esse objeto de “props”.
 2.React chama o componente Welcome com {name: 'Sara'} como props.
 3.Nosso componente Welcome retorna um elemento <h1>Hello, Sara</h1> como resultado.
 4.React DOM atualiza eficientemente o DOM para corresponder <h1>Hello, Sara</h1>.
+
+----------------------------------------------------------------------
+PT-BR
+Convertendo uma Função para uma Classe
+
+1.Criar uma classe ES6 estendendo React.component.
+2.Adicionar um único método vazio chamado render().
+3.Crie a função dentro do método render().
+4.Substitua props por this.props no corpo de render().
+Exemplo:
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+O método render será chamado toda vez que uma atualização acontecer, mas enquanto renderizarmos <Clock> no mesmo nó DOM, apenas uma única instância da classe Clock será usada. Isso nos permite usar recursos adicionais, como o estado local e os métodos de ciclo de vida.
+
+----------------------------------------------------------------------
+PT-BR
+Adicionando Estado Local a uma Classe
+
+Vamos mover a date da props para o state em três passos:
+
+1.Substitua this.props.date por this.state.date no método render():
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+2.Adicione um construtor na classe que atribui a data inicial no this.state:
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+3.Note como nós passamos props para o construtor:
+
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+Componentes de classes devem sempre chamar o construtor com props.
+
+Remova a props date do elemento <Clock />:
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+
+O resultado:
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);

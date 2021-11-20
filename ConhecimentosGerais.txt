@@ -1,3 +1,46 @@
+PT-BR
 Serveless - Serveless significa que cada rota da nossa aplicação será executada de forma isolada
 
+----------------------------------------------------------------------
+PT-BR
 CMS (Content Management system) - Cadastro de informação e servir essas informações atráves de APIs
+
+----------------------------------------------------------------------
+PT-BR
+O que é um elemento DOM?
+O Modelo de Objeto de Documento (DOM) é uma interface de programação para documentos HTML, XML e SVG . Ele fornece uma representação estruturada do documento como uma árvore. O DOM define métodos que permitem acesso à árvore, para que eles possam alterar a estrutura, estilo e conteúdo do documento.
+
+Renderizando um Elemento no DOM
+
+Suponhamos que exista um <div> em algum lugar do seu código HTML:
+
+<div id="root"></div>
+
+Aplicações construídas apenas com React geralmente tem apenas um único nó raiz no DOM.
+
+Para renderizar um elemento React em um nó raiz, passe ambos para ReactDOM.render()`:
+const element = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById('root'));
+
+Atualizando o Elemento Renderizado
+
+Elementos React são imutáveis. Uma vez criados, você não pode alterar seus elementos filhos ou atributos.
+
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
+
+Chama-se o ReactDOM.render() a cada segundo a partir de um callback do setInterval().
+
+O React Somente Atualiza o Necessário
+O React DOM compara o elemento novo e seus filhos com os anteriores e somente aplica as modificações necessárias no DOM para levá-lo ao estado desejado.
+
+----------------------------------------------------------------------
