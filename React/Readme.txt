@@ -293,4 +293,70 @@ Adicionando Métodos de Ciclo de Vida a Classe
 2.React chama então o método render() do componente Clock. É assim que o React aprende o que deve ser exibido na tela. React em seguida, atualiza o DOM para coincidir com a saída de renderização do Clock.
 3.Quando a saída do Clock é inserida no DOM, o React chama o método do ciclo de vida componentDidMount(). Dentro dele, o componente Clock pede ao navegador para configurar um temporizador para chamar o método tick() do componente uma vez por segundo.
 4.A cada segundo o navegador chama o método tick(). Dentro dele, o componente Clock agenda uma atualização de UI chamando setState() com um objeto contendo a hora atual. Graças à chamada setState(), o método render() será diferente e, portanto, a saída de renderização incluirá a hora atualizada. React atualiza o DOM de acordo.
-5.Se o componente Clock for removido do DOM, o React chama o método do ciclo de vida componentWillUnmount() para que o temporizador seja interrompido
+5.Se o componente Clock for removido do DOM, o React chama o método do ciclo de vida componentWillUnmount() para que o temporizador seja interrompido.
+----------------------------------------------------------------------
+PT-BR
+Manipulando eventos
+
+Eventos em React são nomeados usando camelCase ao invés de letras minúsculas.
+Com o JSX você passa uma função como manipulador de eventos ao invés de um texto.
+Por exemplo, com HTML:
+
+<button onclick="activateLasers()">
+  Ativar lasers
+</button>
+É ligeiramente diferente com React:
+
+<button onClick={activateLasers}>
+  Ativar lasers
+</button>
+Outra diferença é que você não pode retornar false para evitar o comportamento padrão no React. Você deve chamar preventDefault explícitamente. Por exemplo, com HTML simples, para evitar o comportamento padrão do formulário de envio, você pode escrever:
+
+<form onsubmit="console.log('Você clicou em enviar.'); return false">
+  <button type="submit">Enviar</button>
+</form>
+No React, isso poderia ser:
+
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('Você clicou em enviar.');
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
+
+Quando você define um componente usando uma classe do ES6, um padrão comum é que um manipulador de eventos seja um método na classe. Por exemplo, este componente Toggle renderiza um botão que permite ao usuário alternar entre os estados “ON” e “OFF”:
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // Aqui utilizamos o `bind` para que o `this` funcione dentro da nossa callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
