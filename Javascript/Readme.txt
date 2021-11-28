@@ -140,3 +140,43 @@ falar(); // objeto global
 
 let comer = Animal.comer;
 comer(); // objeto global
+
+----------------------------------------------------------------------
+PT-BR
+Formas de Output
+
+1° Manipulação por id
+Dado id a um elemento HTML é possível alterar seu valor usando:
+document.getElementById('id do elemento').innerHTML = " valor";
+
+2° Criação de texto
+Esse método só funciona no primeiro carregamento da página:
+document.write("Algo");
+
+Caso inserido pelo console após o primeiro carregamento, o resto da aplicação será substituido.
+
+3°POP-UP
+A criação de um POP-UP é feita atráves de:
+
+window.alert("texto");
+
+4°Mensagem no CONSOLE
+O comando mais conhecido:
+
+console.log("Mensagem");
+
+----------------------------------------------------------------------
+PT-BR
+O que é o DOM(Document Object Model)
+
+O DOM (Document Object Model) é usado para manipulação e atualização em tela pelo
+JavaScript, já o Virtual DOM (VDOM) é a representação do DOM mantida em memória, o
+VDOM é mais rápido que o DOM, nela é mantida uma cópia de todo código e através de
+um método chamado reconciliação são alterados/atualizados somente os elementos
+modificados gerando uma UX melhor.
+
+
+
+
+
+
