@@ -360,3 +360,36 @@ ReactDOM.render(
   <Toggle />,
   document.getElementById('root')
 );
+----------------------------------------------------------------------
+PT-BR
+Reutilização de Componentes
+
+Em muitos designs existem componentes que se repetem como links de um navbar ou componetes de
+uma sidebar, para que trabalho e tempo seja poupado podemos criar um componente separados dos 
+outros e atráves de props passarmos seu conteudo.
+
+Exemplo: 
+
+Criamos um componente, pode ser dentro da parta onde o mesmo será usado ou podemos criar
+uma pasta onde poderemos usar o mesmo de forma global.
+
+export function NavLink({ children, icon, href, ...rest }: NavLinkProps) {
+  return (
+    <ActiveLink href={href} passHref>
+      <ChakraLink display="flex" align="center" {...rest}>
+        <Icon as={icon} fontSize="20" />
+        <Text ml="4" fontWeight="medium">
+          {children}
+        </Text>
+      </ChakraLink>
+    </ActiveLink>
+  );
+}
+
+E no arquivo onde será usado aplicamos assim:
+  <NavLink icon={RiInputMethodLine} href="/forms">
+    Formulários
+  </NavLink>
+  <NavLink icon={RiGitMergeLine} href="/automation">
+    Automação
+  </NavLink>
