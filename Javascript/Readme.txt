@@ -175,8 +175,104 @@ VDOM é mais rápido que o DOM, nela é mantida uma cópia de todo código e atr
 um método chamado reconciliação são alterados/atualizados somente os elementos
 modificados gerando uma UX melhor.
 
+Podemos usar a palavra reservada (document) para selecionarmos elementos em tela.
 
+Selecionando Elementos |
 
+Tendo um elemento que tenha um (id) podemos utilizar o DOM para selecionarmos o mesmo:
 
+document.getElementById("id do elemento")
+Dessa forma estamos somente selecionando o elemento 
 
+Podemos alterar seu valor com 
 
+document.getElementById("id do elemento").innerHTML = "o que você quer por"
+O que será inserido é de sua escolha, HTML, Striongs e etc.
+
+Selecionando Elementos ||
+
+Agora vamos ver como selecionar um elemento através da classe do elemento:
+
+document.getElementsByClassName("class do elemento")
+
+O motivo de que o getElementsByClassName está no plural é por causa que podemos ter vários
+elementos com a mesma class enquanto só podemos ter um id no escópo 
+
+Caso exista a class selecionada em mais de um elemento, podemos selecionar qual
+ dos elementos selecionar adicionando [] ao final:
+
+document.getElementsByClassName("class do elemento")[posição do elemento]
+
+Passado a posição do elemento podemos alterar ele:
+
+document.getElementsByClassName("class do elemento")[0].innerHTMl = alteração;
+
+Selecionando Elementos |||
+
+Também podemos selecionar tags através do DOM:
+
+document.getElementsByTagName("tag")
+
+Também podemosfazer as alterações nesse tipo de seleção
+
+Selecionando Elementos ||||
+
+E por último mas não menos importante, podemos selecionar um elemento por seu nome:
+
+document.getElementsByName("nome do elemento");
+
+----------------------------------------------------------------------
+PT-BR
+
+Queryselector
+
+Com o mesmo funcionamento do seletor de classes/ids o querselector serve para selecionarmos 
+elementos, classes. ids ou nome de elementos.
+
+Mas diferente dos seletores passados, usamos outro metódo para buscar nossos elementos:
+
+Como no CSS, chamamos ID's com #
+document.querySelector("#id") -> retorna o elemento com o id inserido
+para alterarmos valores:
+document.querySelector("#id").innerHTML = valor a ser atribuido;
+
+Para classes:
+document.querySelector(".class") -> retorna o primeiro elemento com essa class com
+para alterarmos valores:
+document.querySelector(".class").innerHTML = valor a ser atribuido;
+
+Tags:
+document.querySelector("tag")
+para alterarmos valores:
+document.querySelector("tag").innerHTML = valor a ser atribuido;
+
+Como dito, o querySelector retorna somente o primeiro class inserido
+Para chamarmos todos os itens daquela class usamos:
+
+document.querySelectorAll(".class") -> retorna todos elementos com aquela class
+
+----------------------------------------------------------------------
+PT-BR
+
+Scroll Behavior
+
+Para criarmos uma rolagem suave pela tela, subir a tela de modo suave usamos:
+
+document.scroolY(0) -> para rolarmos verticalmente para o inicio da página.
+document.scroolX(0) -> para rolarmos horizontalmente para o início da página.
+
+Agora quando queremos rolar um elemento para seu início usamos junto o querySelector:
+
+document.querSelector('text').scrollTop(0) -> para rolamento vertical
+document.querSelector('text').scrollLeft(0) -> para rolamento horizontal
+
+Agora para um rolamento suave da página criamos uma função onde passamos seu "comportamento":
+
+function subirATelaSuave(){
+  document.scroolTo({
+    top: 0,
+    behavior: smooth,
+  })
+}
+
+O parametro "behavior: smooth" indica que o rolamento será feito de forma suave.
