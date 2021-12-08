@@ -121,6 +121,7 @@ Importações dos Icones
 Para usarmos os icones baixados, fazemos a importação de um componente, ou seja, sem chaves
 
 import SaveIcon from '@material-ui/icons/SaveIcon'
+import { Save, ThreeDRotation } from "@material-ui/icons";
 
 ----------------------
 
@@ -197,3 +198,56 @@ export function ButtonGroup() {
     )
 }
 
+----------------------------------------------------------------------
+
+CheckBox
+
+Checkbox são utilizados dentro de formularios
+
+O componente checkbox no MUI se faz necéssario o uso da lógica de desestruturação
+ e é viável cria-lo em um componente separado.
+
+Exemplo:
+
+export function ExemploCheckBox(){
+  const {checked, setChecked} = React.useState(true)
+
+  return(
+    <Checkbox/>
+  )
+}
+
+----------------------
+
+Propiedades obrigatorias do checkbox
+
+O componente CheckBox do MUI recebe por padrão propiedades para que funcione, 
+caso contrário ele não funcionará, as propiedades:
+
+export function ExemploCheckBox(){
+  const [checked, setChecked] = React.useState(true)
+
+  return(
+    <Checkbox
+    checked={checked}     <- verificação se está true or false
+    onChange={(e) => {setCheked(e.target.value.checked)}}
+    />
+  )
+}
+
+----------------------
+
+Propiedades
+
+Como os outros componentes o check box recebe outras propiedades de estilização:
+
+export function ExemploCheckBox(){
+  const [checked, setChecked] = React.useState(true)
+
+  return(
+    <Checkbox
+    color="primary"
+    
+    />
+  )
+}
