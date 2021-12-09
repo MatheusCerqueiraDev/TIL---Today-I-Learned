@@ -371,7 +371,7 @@ const theme(theme é definido por boas práticas) = createTheme ({
   },
 })
 
-!para mais opções de cores dentro da "class" primary existem palavras reservads para setarmos as variaveis
+!para mais opções de cores dentro da "class" primary existem palavras reservadas para setarmos as variaveis
 
 const theme = createTheme({
   palette: {
@@ -385,3 +385,79 @@ const theme = createTheme({
     },
   },
 });
+
+----------------------
+
+Tipografia
+
+A tipografia se faz útil quando temos que estilzar nossa fonte
+
+Para o uso de uma fonte externa temos dois modos para usa-la:
+
+1° importando:
+
+<link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+2° Instalando:
+
+yarn add fontsource-roboto(ou fonte desejada)
+
+!Instalando você precisará importar a fonte onde ela for chamada:
+
+import 'fontsource-roboto(fonte desejada)';
+
+
+
+Podendo também ser usado como componente importamos o Typography como componente:
+
+import Typography from '@mui/material/Typography';
+
+Modo de uso
+
+Podemos uso o Typography para criarmos títulos como h1 e etc:
+
+<Typography variant="h1"></Typography>
+
+*lista de variant existentes: https://mui.com/pt/components/typography/#component
+
+Podemos brincar com esse componente:
+
+<Typography variant="h1" component="div"></Typography>
+
+Esse componente será uma div que recebe a estilizaçãode um h1
+
+
+
+Typography no theme
+
+
+Podemos estilizar as variantes dentro de Typography:
+
+Basta criarmos um objeto typography dentro da const theme...
+
+const theme = createTheme({
+
+  typography:{
+    h2: {
+      fontSize: 36,
+    }
+  },
+  palette: {
+    primary: {
+      main: '#0971f1',
+      darker: '#053e85',
+    },
+    neutral: {
+      main: '#64748B',
+      contrastText: '#fff',
+    },
+  },
+});
+
+----------------------------------------------------------------------
+
+Container / Grid 
+
