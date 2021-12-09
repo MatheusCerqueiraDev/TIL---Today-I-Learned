@@ -230,7 +230,7 @@ export function ExemploCheckBox(){
   return(
     <Checkbox
     checked={checked}     <- verificação se está true or false
-    onChange={(e) => {setCheked(e.target.value.checked)}}
+    onChange={(e) => {setCheked(e.target.checked)}} <- Mudança de estado 
     />
   )
 }
@@ -247,7 +247,45 @@ export function ExemploCheckBox(){
   return(
     <Checkbox
     color="primary"
-    
+    disabled
     />
   )
 }
+
+----------------------------------------------------------------------
+
+Forms em MUI
+
+MuiFormControlLabel
+
+Instalando depêndencias:
+
+yarn add @emotion/react
+yarn add @emotion/styled
+
+Como importar:
+
+import FormControlLabel from '@mui/material/FormControlLabel';
+ ou
+import { FormControlLabel } from '@mui/material';
+
+----------------------
+
+Como utilizar?
+
+<FormControlLabel
+  control={
+    <Checkbox inputProps={{
+      'aria-label': 'secondary checkbox'
+    }}
+    />
+  }
+
+/>
+
+----------------------
+
+Propiedades
+
+-> control
+
