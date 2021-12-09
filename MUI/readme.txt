@@ -273,14 +273,16 @@ import { FormControlLabel } from '@mui/material';
 
 Como utilizar?
 
+O FormControlLabel irá funcionar como um container par unirmos label's com outro elemento
+
 <FormControlLabel
   control={
-    <Checkbox inputProps={{
+    <Checkbox 
+    inputProps={{
       'aria-label': 'secondary checkbox'
     }}
-    />
-  }
-
+    />}
+  label="Label do checkbox"
 />
 
 ----------------------
@@ -288,4 +290,98 @@ Como utilizar?
 Propiedades
 
 -> control
+Elemento de controle para instanciar Radio, Switch ou Checkbox.
 
+-> label
+Como no HTML normal, usado para nomear tags
+
+Você pode achar todas propiedades em: https://mui.com/pt/api/form-control-label/#main-content
+
+----------------------------------------------------------------------
+
+MakeStyles
+
+O makestyles é utilizado para nós criarmos nossa propia personalizada
+
+Como importar?:
+
+import {makeStyles} from "@material-ui/core/styles"
+
+----------------------
+
+Modo de uso:
+
+Como dito anteriormente usamos o makeStyles para personalizar todos os componentes da nossa maneira, para isso criamos
+uma const fora da função ou um arquivo especial para estilizações, por exemplo podemos personalizar o nosso root:
+
+!Exemplo com a const dentro do própio arquivo!
+
+import {makeStyles} from "@material-ui/core/styles"
+
+const useStyles = makeStyles({
+  root:{
+    estilizações...
+  }
+})
+
+function ButtonStyled(){
+  const classes = useStyles();
+
+  return <Button className={classes.root}>Teste</Button>
+}
+
+Dessa forma passamos somente as estilizações de root ou qual seja a classe de forma singular ao componente.
+
+----------------------
+
+ThemeProvider
+
+O theme provider é utilizado para criarmos variaveis de estilização como cores, shapes de um componente e tipografias.
+Usado em volta da aplicação para que todos os lugares da aplicação tenham acesso as estilizações.
+
+Como importar?:
+
+import {ThemeProvider} from "@material-ui/core/styles"
+
+Como dito anteriormente usamos o Theme Provider na camada App.js ou na camada index.js.
+
+----------------------
+
+Cores no Theme Provider
+
+Para criamos nossa variaveis de cores podemos criar um arquivo a parte para exportarmos um theme e passa 
+como prop pro ThemeProvider.
+
+Como criar?
+
+1° - importação
+
+import { createTheme } from "@mui/material/styles";
+
+2° criação de uma constante 
+
+const theme(theme é definido por boas práticas) = createTheme ({
+  palette: {
+    primary: {
+      main: "#010101",
+    },
+    secondary: {
+      main: "#FFFFFF",
+    },
+  },
+})
+
+!para mais opções de cores dentro da "class" primary existem palavras reservads para setarmos as variaveis
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#0971f1',
+      darker: '#053e85',
+    },
+    neutral: {
+      main: '#64748B',
+      contrastText: '#fff',
+    },
+  },
+});
