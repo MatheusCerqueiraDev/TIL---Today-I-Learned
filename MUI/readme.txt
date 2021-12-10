@@ -419,24 +419,26 @@ Modo de uso
 
 Podemos uso o Typography para criarmos títulos como h1 e etc:
 
+
 <Typography variant="h1"></Typography>
 
-*lista de variant existentes: https://mui.com/pt/components/typography/#component
 
+*lista de variant existentes: https://mui.com/pt/components/typography/#component
 Podemos brincar com esse componente:
+
 
 <Typography variant="h1" component="div"></Typography>
 
-Esse componente será uma div que recebe a estilizaçãode um h1
 
+Esse componente será uma div que recebe a estilizaçãode um h1
 
 
 Typography no theme
 
 
 Podemos estilizar as variantes dentro de Typography:
-
 Basta criarmos um objeto typography dentro da const theme...
+
 
 const theme = createTheme({
 
@@ -460,4 +462,82 @@ const theme = createTheme({
 ----------------------------------------------------------------------
 
 Container / Grid 
+No MUI Container e Grid são componentes
+Sendo assim, importamos ambos para o uso.
 
+
+import Container from '@material-ui/core/Container'
+
+
+Por padrão o Container vem com maxWidth
+Podemos alterar o tamanho usando maxWidth no componente.
+O maxWidth recebe valores como sm - small, md - medium, lg -large e xs - extra large.
+
+
+Grid
+O meio de importar continua igual pro componente
+
+
+import Grid from '@material-ui/core/Grid'
+
+
+Existem dois tipos de Grid:
+
+Container:
+Esse fica em volta dos itens á serem organizados:
+
+
+<Grid container></Grid>
+
+
+Ainda dentro de container, escolhemos o espaçamento usando spacing
+
+
+<Grid container spacing={numero a escolha}></Grid>
+
+
+E podemos alinhar o conteúdo utilizando justify
+
+
+<Grid container justify="center"></Grid>
+
+
+Item:
+Esse será o container de cada item a ser organizado
+
+
+<Grid item></Grid>
+----------------------------------------------------------------------
+
+Paper
+
+O fundo de uma aplicação se assemelha a textura lisa e opaca de uma folha de papel e o comportamento de uma aplicação imita a habilidade do papel de ser redimensionado, embaralhado e amontoado em várias folhas.
+
+O componente Paper é uma div pre estilizada que pode receber variant e outras props:
+
+<Paper elevation={0} /> (aplica shadow ao redor)
+<Paper />
+<Paper elevation={3} />
+
+<Paper variant="outlined" /> (borda redonda)
+<Paper variant="outlined" square /> (borda quadrada)
+
+----------------------------------------------------------------------
+
+Breakpoints
+
+Para aprendermos responsividade no MUI precisamos primeiramente decorar o tamanho das telas:
+
+xs = mobile;
+sm = mobile;
+md = tablet;
+lg = desktop;
+
+Com isso, aplicamos dentro dos containers e grids para definir tamanhos nos diferentes tipos de tela
+
+----------------------------------------------------------------------
+
+AppBar
+Componente utilizado para criarmos nosso header
+
+Esse componente pode receber outros componentes dentro dele e também receber props de esilização.
