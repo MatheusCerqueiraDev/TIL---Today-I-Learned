@@ -541,3 +541,52 @@ AppBar
 Componente utilizado para criarmos nosso header
 
 Esse componente pode receber outros componentes dentro dele e também receber props de esilização.
+Por padrão ele criar um Container no header da aplicação e dentro dele você inseri os componentes que precisa.
+
+----------------------------------------------------------------------
+
+Escoped styles
+
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 60,
+    backgroundColor: 'violet',
+    '&:hover': {
+      background: 'blue'
+    },
+  },
+  title: {
+    textDecoration: 'underline',
+    marginBottom: 20,
+  }
+})
+
+export default function Create() {
+  const classes = useStyles()
+
+  return (
+    <Container size="sm">
+      <Typography
+        className={classes.title}
+        variant="h6" 
+        color="textSecondary"
+        component="h2"
+        gutterBottom
+      >
+        Create a New Note
+      </Typography>
+
+      <Button
+        className={classes.btn}
+        onClick={() => console.log('you clicked me')}
+        type="submit" 
+        color="secondary" 
+        variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}>
+        Submit
+      </Button>
+
+      
+    </Container>
+  )
+}
