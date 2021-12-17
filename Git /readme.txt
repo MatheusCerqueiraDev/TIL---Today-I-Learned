@@ -225,3 +225,33 @@ Além de PUT & DELETE
 -- Não são idempotentes nem seguros
 
 POST/PATCH
+
+//////////////////////////////////////////
+
+PULL REQUESTS
+
+Para iniciarmos uma PR(pull request):
+
+Primeiro damos um fork ao repositório a ser alterados
+em seguida criamos uma branch nele com o comando:
+
+git checkout -b nome da branch(escolha sua)
+
+Com esse comando nós criamos uma nova branch e já adentramos ela
+
+Feito as alterações partimos para o pull request
+
+Iniciamos com um:
+
+git add .
+git commit -m ˜message˜
+
+Feito isso subimos nossa versão com: 
+
+git push --set-upstream origin (nome da branch que foi criada)
+
+Concluído isso vamos ao github no repositório do projeto -> 
+Acessamos a aba "Pull request"->
+Ao lado direto irá aparecer um botão verde e indicando a solicitação PR->
+Clicando, caimos em uma pagina onde descremos o que é a pull request e damos detalhadamente informações da mesma->
+Por fim, enviamos a PR e aguardamos o merge ou reject.

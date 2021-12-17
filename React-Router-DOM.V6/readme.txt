@@ -9,3 +9,6 @@ O uso do useNavigate()gancho e do <Navigate>componente para navegar imperativame
 
 O uso de navigate("...", { replace: true })para substituir a /loginrota na pilha de histórico para que o
  usuário não retorne à página de login ao clicar no botão Voltar após o login.
+
+O uso de navigate("...", { replace: true })para substituir a /loginrota na pilha de histórico 
+para que o usuário não retorne à página de login ao clicar no botão Voltar após o login
