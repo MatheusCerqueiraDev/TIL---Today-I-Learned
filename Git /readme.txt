@@ -250,7 +250,7 @@ Feito isso subimos nossa versão com:
 
 git push --set-upstream origin (nome da branch que foi criada)
 
-Conclído isso vamos ao github no repositório do projeto -> 
+Concluído isso vamos ao github no repositório do projeto -> 
 Acessamos a aba "Pull request"->
 Ao lado direto irá aparecer um botão verde e indicando a solicitação PR->
 Clicando, caimos em uma pagina onde descremos o que é a pull request e damos detalhadamente informações da mesma->
