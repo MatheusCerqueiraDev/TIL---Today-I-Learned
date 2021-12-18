@@ -829,3 +829,53 @@ Performance
 O conteúdo dos acordeões é montado por padrão, mesmo que o acordeão não esteja expandido. Esse comportamento padrão tem em mente a renderização do lado do servidor e o SEO. Se você renderizar grandes árvores de componentes dentro de seu acordeão ou simplesmente renderizar muitos acordeões, pode ser uma boa ideia desabilitar esse comportamento padrão habilitando unmountOnExit em TransitionProps:
 
 <Accordion TransitionProps={{ unmountOnExit: true }} />
+
+----------------------------------------------------------------------
+COMPONENTES DE FEEDBACKS
+
+Alert
+
+Alert tem 4 estados de feedback, são eles:
+
+-> Error Alert
+-> Sucess Alert
+-> Info Alert
+-> Warning Alert
+
+----------------------
+
+Modo de importação
+
+import { Alert } from '@mui/material';
+
+----------------------
+
+Modo de uso
+
+<Alert severity="error">This is an error alert — check it out!</Alert>
+<Alert severity="warning">This is a warning alert — check it out!</Alert>
+<Alert severity="info">This is an info alert — check it out!</Alert>
+<Alert severity="success">This is a success alert — check it out!</Alert>
+
+obs: (severity) intrução para definir tipo do Alert
+
+----------------------
+
+AlertTitle
+
+Usado para definir titulo do Alert
+
+----------------------
+
+Importação
+
+import AlertTitle from '@mui/material/AlertTitle';
+
+----------------------
+
+Modo de uso
+
+<Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        This is an error alert — <strong>check it out!</strong>
+      </Alert>
