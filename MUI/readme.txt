@@ -879,3 +879,19 @@ Modo de uso
         <AlertTitle>Error</AlertTitle>
         This is an error alert — <strong>check it out!</strong>
       </Alert>
+
+----------------------
+
+Onclick for Alerts
+
+<Alert onClose={() => {}}>This is a success alert — check it out!</Alert> <- Cria um botãoo para fechar o alert
+<Alert
+  action={
+    <Button color="inherit" size="small">
+      UNDO
+    </Button>
+  }
+>
+  This is a success alert — check it out!
+</Alert>
+
