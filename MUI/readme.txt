@@ -895,3 +895,14 @@ Onclick for Alerts
   This is a success alert — check it out!
 </Alert>
 
+----------------------
+
+Responsividade
+
+Cada ponto de quebra (uma chave) corresponde a uma largura de tela fixa (um valor):
+
+xs, extra-pequeno: 0px
+sm, pequeno: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px
