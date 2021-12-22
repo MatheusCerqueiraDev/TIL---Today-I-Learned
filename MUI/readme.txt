@@ -906,3 +906,19 @@ sm, pequeno: 600px
 md, medium: 900px
 lg, large: 1200px
 xl, extra-large: 1536px
+
+Consultas de Mídia CSS
+
+theme.breakpoints.up(key)
+https://mui.com/pt/customization/breakpoints/#theme-breakpoints-up-key-media-query
+
+theme.breakpoints.down(key)
+https://mui.com/pt/customization/breakpoints/#theme-breakpoints-down-key-media-query
+
+https://mui.com/pt/customization/breakpoints/#theme-breakpoints-only-key-media-query
+
+theme.breakpoints.only(key)
+https://mui.com/pt/customization/breakpoints/#theme-breakpoints-not-key-media-query
+
+theme.breakpoints.between(start, end)
+https://mui.com/pt/customization/breakpoints/#theme-breakpoints-between-start-end-media-query
