@@ -44,3 +44,11 @@ O React Somente Atualiza o Necessário
 O React DOM compara o elemento novo e seus filhos com os anteriores e somente aplica as modificações necessárias no DOM para levá-lo ao estado desejado.
 
 ----------------------------------------------------------------------
+
+EHLO^DUDE
+
+Derivado do comando HELO, o mesmo usado quando um usúario de e-mail está se conectando a um 
+STMP server, esse comando indica ao server que o usuario quer enviar um e-mail, levando seu 
+dominio.
+
+*STMP - Simple Mail Transfer Protocol
