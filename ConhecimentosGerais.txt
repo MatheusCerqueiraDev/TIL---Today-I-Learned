@@ -52,3 +52,14 @@ STMP server, esse comando indica ao server que o usuario quer enviar um e-mail, 
 dominio.
 
 *STMP - Simple Mail Transfer Protocol
+
+Quando dizemos que leva ser dominio, resumimos que em uma operação as seguintes infos estejam
+presentes:
+
+- Nome de dominio.
+- Endereço IP seguido de um inteiro de 10 digítos.
+- Outro endereço IP pontilhado e envolto de chaves.
+- Endereço IPv6 completo ou comprimido.
+
+Em caso que o servidor não suporte serviços STMP o remetente recebera um uma resposta negativa
+EHLO 
