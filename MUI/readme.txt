@@ -922,3 +922,29 @@ https://mui.com/pt/customization/breakpoints/#theme-breakpoints-not-key-media-qu
 
 theme.breakpoints.between(start, end)
 https://mui.com/pt/customization/breakpoints/#theme-breakpoints-between-start-end-media-query
+
+----------------------
+
+Divider 
+
+Um divisor é uma linha fina que agrupa conteúdo em listas e leiautes.
+O divisor renderiza como um <hr> por padrão. Você pode salvar a renderização desse elemento DOM usando a propriedade divider no componente ListItem.
+
+Exemplo:
+
+<List sx={style} component="nav" aria-label="mailbox folders">
+  <ListItem button>
+    <ListItemText primary="Inbox" />
+  </ListItem>
+  <Divider />
+  <ListItem button divider>
+    <ListItemText primary="Drafts" />
+  </ListItem>
+  <ListItem button>
+    <ListItemText primary="Trash" />
+  </ListItem>
+  <Divider light />
+  <ListItem button>
+    <ListItemText primary="Spam" />
+  </ListItem>
+</List>
