@@ -1054,3 +1054,27 @@ export default function RecipeReviewCard() {
     </Card>
   );
 }
+
+----------------------
+
+BreadCrumbs
+
+Chamada de navegação estrutural, presente em varios sites de vendas.
+
+Os breadcrumbs são usados para informar o usuario a rota dele atráves de códgio estrutural.
+
+
+Exemplo:
+<Breadcrumbs aria-label="breadcrumb">
+  <Link underline="hover" color="inherit" href="/">
+    MUI
+  </Link>
+  <Link
+    underline="hover"
+    color="inherit"
+    href="/getting-started/installation/"
+  >
+    Core
+  </Link>
+  <Typography color="text.primary">Breadcrumbs</Typography>
+</Breadcrumbs>
