@@ -407,3 +407,36 @@ Lembre-se de que a função passada para useMemo será executa durante a renderi
 Se nenhum array for fornecida, um novo valor será calculado em cada renderização.
 
 Você pode confiar em useMemo como uma otimização de desempenho, não como uma garantia semântica. No futuro, o React pode escolher “esquecer” alguns valores anteriormente agrupados e recalculá-los na próxima renderização, por exemplo, para liberar memória para outros componentes. Escreva seu código para que ele ainda funcione sem useMemo — e depois adicione-o para otimizar o desempenho.
+
+----------------------------------------------------------------------
+
+useRef
+
+const refContainer = useRef(initialValue);
+useRef retorna um objeto ref mutável, no qual a propriedade .current é inicializada para o argumento passado (initialValue). O objeto retornado persistirá durante todo o ciclo de vida do componente.
+
+Um caso comum de uso é o acesso imperativamente a um componente filho:
+
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // `current` aponta para o evento de `focus` gerado pelo campo de texto
+    inputEl.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus no input</button>
+    </>
+  );
+}
+Essencialmente, useRef é como uma “caixa” que pode conter um valor mutável em sua propriedade .current.
+
+Você pode estar familiarizado com os refs principalmente como uma forma de acessar o DOM. Se você passar um objeto ref para React com <div ref = {myRef} />, React definirá sua propriedade .current para o nó DOM correspondente sempre que esse nó for alterado.
+
+No entanto, useRef () é útil para mais do que o atributo ref. É útil para manter qualquer valor mutável em torno, semelhante a como você usaria campos de instância em classes.
+
+Isso funciona porque useRef () cria um objeto JavaScript simples. A única diferença entre useRef () e a criação de um objeto {current: ...} é que useRef lhe dará o mesmo objeto ref em cada render.
+
+Tenha em mente que o useRef não avisa quando o conteúdo é alterado. Mover a propriedade .current não causa uma nova renderização. Se você quiser executar algum código quando o React anexar ou desanexar um ref a um nó DOM, convém usar um callback ref.
+
