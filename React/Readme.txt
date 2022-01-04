@@ -393,3 +393,17 @@ E no arquivo onde será usado aplicamos assim:
   <NavLink icon={RiGitMergeLine} href="/automation">
     Automação
   </NavLink>
+----------------------------------------------------------------------
+
+  useMemo
+
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+Retorna um valor memoizado.
+
+Recebe uma função create e um array como argumentos. O useMemo só recuperará o valor memoizado quando o array receber uma atualização. Esta otimização ajuda a evitar cálculos caros em cada renderização.
+
+Lembre-se de que a função passada para useMemo será executa durante a renderização. Não faça nada lá que você normalmente não faria ao renderizar. Por exemplo, os side effects pertencem a useEffect, não à useMemo.
+
+Se nenhum array for fornecida, um novo valor será calculado em cada renderização.
+
+Você pode confiar em useMemo como uma otimização de desempenho, não como uma garantia semântica. No futuro, o React pode escolher “esquecer” alguns valores anteriormente agrupados e recalculá-los na próxima renderização, por exemplo, para liberar memória para outros componentes. Escreva seu código para que ele ainda funcione sem useMemo — e depois adicione-o para otimizar o desempenho.
