@@ -1118,3 +1118,12 @@ gridTemplateAreas: define tamanho de espaço do item
   "header header header header: linha inteira
   "main main . sidebar": 50% para cada classe
   "footer footer footer footer": linha inteira
+
+----------------------
+
+Position
+
+Define em qual posição index se encontrar o item
+
+<Box sx={{ zIndex: 'tooltip' }}>: posição 1 
+<Box sx={{ zIndex: 'modal' }}>: posição 0 
