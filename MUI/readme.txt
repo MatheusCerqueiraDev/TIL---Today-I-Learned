@@ -1087,3 +1087,34 @@ Usado para sobreescrever propiedades padrão de um component, a propiedade sx é
 poderosa para estilizarmos da nossa forma.
 
 A mesma sobrescreve qualquer estilização, mas atente-se as propiedades não atribuiveis.
+
+----------------------
+
+Grid
+
+Apesar da documentação do MUI apresentar o esquema de grid usando a prop sx, podemos 
+importar o componente pre estilizado <Grid>.
+
+O mesmo é um componente de reclosure, uma tag e outra fecha o componente.
+
+O componente Grid do MUI tem dois formatos:
+
+<Grid container></Grid> para definir container do grid
+<Grid item></Grid> para definir um item do grid
+
+Voltando ao uso do Grid atráves do prop sx, aqui vão algumas props de layout:
+
+gridTemplateRows: alinhamento de itens em linha
+
+grid-template-columns:  alinhamento de itens em coluna
+
+gap: distanciamento entre itens do grid
+
+row-gap: distanciamento linhas
+column-gap: distanciamento colunas
+
+gridTemplateAreas: define tamanho de espaço do item
+
+  "header header header header: linha inteira
+  "main main . sidebar": 50% para cada classe
+  "footer footer footer footer": linha inteira
