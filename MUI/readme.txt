@@ -1078,3 +1078,12 @@ Exemplo:
   </Link>
   <Typography color="text.primary">Breadcrumbs</Typography>
 </Breadcrumbs>
+
+----------------------
+
+SX prop
+
+Usado para sobreescrever propiedades padrão de um component, a propiedade sx é uma ferramenta
+poderosa para estilizarmos da nossa forma.
+
+A mesma sobrescreve qualquer estilização, mas atente-se as propiedades não atribuiveis.
