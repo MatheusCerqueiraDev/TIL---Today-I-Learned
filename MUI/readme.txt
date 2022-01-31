@@ -1222,3 +1222,13 @@ function Theming() {
     </ThemeProvider>
   );
 }
+
+Aninhamento de tema
+Você pode aninhar vários provedores de tema. Isso pode ser muito útil ao lidar com diferentes áreas da sua aplicação que têm aparência distinta entre si.
+
+<ThemeProvider theme={outerTheme}>
+  <Child1 />
+  <ThemeProvider theme={innerTheme}>
+    <Child2 />
+  </ThemeProvider>
+</ThemeProvider>
